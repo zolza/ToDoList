@@ -3,7 +3,9 @@ var list = {
 
   add: function(task_name) {
     var item = $("<li></li>");
-    item.text(task_name);
+    var checkbox = $("<input type='checkbox'>");
+    item.append(checkbox);
+    item.append(task_name);
     $('#list').prepend(item);
 
     var task = {
