@@ -8,6 +8,16 @@ var list = {
     item.append(task_name);
     $('#list').prepend(item);
 
+    $("#list li").on('click', 'input', function(){
+      var checked = $(this).prop('checked');
+      if (checked) {
+        $(this).parent().css('text-decoration', 'line-through');
+      } else {
+        $(this).parent().css('text-decoration', 'none');
+      }
+
+    });
+
     var task = {
       name: task_name,
       completed: false
